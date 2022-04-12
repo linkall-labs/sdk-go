@@ -14,6 +14,7 @@ expression
     // LIKE, EXISTS and IN takes precedence over all the other binary operators
     | expression NOT? LIKE stringLiteral #likeExpression
     | EXISTS identifier #existsExpression
+    | EXISTS dataIdentifier #dataExistsExpression
     | expression NOT? IN setExpression #inExpression
     // Numeric operations
     | expression (STAR | DIVIDE | MODULE) expression #binaryMultiplicativeExpression
@@ -31,6 +32,7 @@ atom
     : booleanLiteral #booleanAtom
     | integerLiteral #integerAtom
     | stringLiteral #stringAtom
+    | dataIdentifier #dataIdentifierAtom
     | identifier #identifierAtom
     ;
 
@@ -39,6 +41,7 @@ atom
 identifier
     : (IDENTIFIER | IDENTIFIER_WITH_NUMBER)
     ;
+dataIdentifier: DATA_IDENTIFIER;
 functionIdentifier
     : (IDENTIFIER | FUNCTION_IDENTIFIER_WITH_UNDERSCORE)
     ;

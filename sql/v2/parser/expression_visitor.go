@@ -55,8 +55,14 @@ func (v *expressionVisitor) Visit(tree antlr.ParseTree) interface{} {
 		return v.VisitStringLiteral(tree.(*gen.StringLiteralContext))
 	case *gen.ExistsExpressionContext:
 		return v.VisitExistsExpression(tree.(*gen.ExistsExpressionContext))
+	case *gen.DataExistsExpressionContext:
+		return v.VisitDataExistsExpression(tree.(*gen.DataExistsExpressionContext))
 	case *gen.InExpressionContext:
 		return v.VisitInExpression(tree.(*gen.InExpressionContext))
+	case *gen.DataIdentifierAtomContext:
+		return v.VisitDataIdentifierAtom(tree.(*gen.DataIdentifierAtomContext))
+	case *gen.DataIdentifierContext:
+		return v.VisitDataIdentifier(tree.(*gen.DataIdentifierContext))
 	case *gen.IdentifierAtomContext:
 		return v.VisitIdentifierAtom(tree.(*gen.IdentifierAtomContext))
 	case *gen.IdentifierContext:
@@ -147,6 +153,10 @@ func (v *expressionVisitor) VisitBinaryComparisonExpression(ctx *gen.BinaryCompa
 
 func (v *expressionVisitor) VisitExistsExpression(ctx *gen.ExistsExpressionContext) interface{} {
 	return expression.NewExistsExpression(strings.ToLower(ctx.Identifier().GetText()))
+}
+
+func (v *expressionVisitor) VisitDataExistsExpression(ctx *gen.DataExistsExpressionContext) interface{} {
+	return expression.NewDataExistsExpression(ctx.DataIdentifier().GetText()[5:])
 }
 
 func (v *expressionVisitor) VisitBinaryLogicExpression(ctx *gen.BinaryLogicExpressionContext) interface{} {
@@ -255,6 +265,10 @@ func (v *expressionVisitor) VisitBinaryAdditiveExpression(ctx *gen.BinaryAdditiv
 	}
 }
 
+func (v *expressionVisitor) VisitDataIdentifier(ctx *gen.DataIdentifierContext) interface{} {
+	return expression.NewDataIdentifierExpression(ctx.GetText()[5:])
+}
+
 func (v *expressionVisitor) VisitIdentifier(ctx *gen.IdentifierContext) interface{} {
 	return expression.NewIdentifierExpression(strings.ToLower(ctx.GetText()))
 }
@@ -303,6 +317,10 @@ func (v *expressionVisitor) VisitIntegerAtom(ctx *gen.IntegerAtomContext) interf
 }
 
 func (v *expressionVisitor) VisitStringAtom(ctx *gen.StringAtomContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *expressionVisitor) VisitDataIdentifierAtom(ctx *gen.DataIdentifierAtomContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

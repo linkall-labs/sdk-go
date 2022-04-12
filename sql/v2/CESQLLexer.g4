@@ -76,4 +76,5 @@ INTEGER_LITERAL:                             INT_DIGIT+;
 
 IDENTIFIER:                                 [a-zA-Z]+;
 IDENTIFIER_WITH_NUMBER: [a-zA-Z0-9]+;
+DATA_IDENTIFIER:                            'DATA' ( '.' [a-zA-Z0-9_-]+ )+;
 FUNCTION_IDENTIFIER_WITH_UNDERSCORE:                        [A-Z] [A-Z_]*;

@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 // Code generated from CESQLParser.g4 by ANTLR 4.10.1. DO NOT EDIT.
+=======
+/*
+ Copyright 2021 The CloudEvents Authors
+ SPDX-License-Identifier: Apache-2.0
+*/
+
+// Code generated from CESQLParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
+>>>>>>> bcb75b3 (wip: feat: supports data in sql)
 
 package gen // CESQLParser
 import (
@@ -12,7 +21,84 @@ import (
 // Suppress unused import errors
 var _ = fmt.Printf
 var _ = strconv.Itoa
+<<<<<<< HEAD
 var _ = sync.Once{}
+=======
+
+var parserATN = []uint16{
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 36, 119,
+	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
+	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 3, 2,
+	3, 2, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 45, 10, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+	5, 3, 61, 10, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 67, 10, 3, 3, 3, 3, 3, 7,
+	3, 71, 10, 3, 12, 3, 14, 3, 74, 11, 3, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 5,
+	4, 81, 10, 4, 3, 5, 3, 5, 3, 6, 3, 6, 3, 7, 3, 7, 3, 8, 3, 8, 3, 9, 3,
+	9, 3, 10, 3, 10, 3, 11, 3, 11, 3, 11, 3, 11, 7, 11, 99, 10, 11, 12, 11,
+	14, 11, 102, 11, 11, 5, 11, 104, 10, 11, 3, 11, 3, 11, 3, 12, 3, 12, 3,
+	12, 3, 12, 7, 12, 112, 10, 12, 12, 12, 14, 12, 115, 11, 12, 3, 12, 3, 12,
+	3, 12, 2, 3, 4, 13, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 2, 10, 3, 2,
+	13, 15, 3, 2, 16, 17, 3, 2, 18, 24, 3, 2, 9, 11, 3, 2, 33, 34, 4, 2, 33,
+	33, 36, 36, 3, 2, 28, 29, 3, 2, 30, 31, 2, 128, 2, 24, 3, 2, 2, 2, 4, 44,
+	3, 2, 2, 2, 6, 80, 3, 2, 2, 2, 8, 82, 3, 2, 2, 2, 10, 84, 3, 2, 2, 2, 12,
+	86, 3, 2, 2, 2, 14, 88, 3, 2, 2, 2, 16, 90, 3, 2, 2, 2, 18, 92, 3, 2, 2,
+	2, 20, 94, 3, 2, 2, 2, 22, 107, 3, 2, 2, 2, 24, 25, 5, 4, 3, 2, 25, 26,
+	7, 2, 2, 3, 26, 3, 3, 2, 2, 2, 27, 28, 8, 3, 1, 2, 28, 29, 5, 12, 7, 2,
+	29, 30, 5, 20, 11, 2, 30, 45, 3, 2, 2, 2, 31, 32, 7, 12, 2, 2, 32, 45,
+	5, 4, 3, 14, 33, 34, 7, 17, 2, 2, 34, 45, 5, 4, 3, 13, 35, 36, 7, 26, 2,
+	2, 36, 45, 5, 8, 5, 2, 37, 38, 7, 26, 2, 2, 38, 45, 5, 10, 6, 2, 39, 40,
+	7, 4, 2, 2, 40, 41, 5, 4, 3, 2, 41, 42, 7, 5, 2, 2, 42, 45, 3, 2, 2, 2,
+	43, 45, 5, 6, 4, 2, 44, 27, 3, 2, 2, 2, 44, 31, 3, 2, 2, 2, 44, 33, 3,
+	2, 2, 2, 44, 35, 3, 2, 2, 2, 44, 37, 3, 2, 2, 2, 44, 39, 3, 2, 2, 2, 44,
+	43, 3, 2, 2, 2, 45, 72, 3, 2, 2, 2, 46, 47, 12, 8, 2, 2, 47, 48, 9, 2,
+	2, 2, 48, 71, 5, 4, 3, 9, 49, 50, 12, 7, 2, 2, 50, 51, 9, 3, 2, 2, 51,
+	71, 5, 4, 3, 8, 52, 53, 12, 6, 2, 2, 53, 54, 9, 4, 2, 2, 54, 71, 5, 4,
+	3, 7, 55, 56, 12, 5, 2, 2, 56, 57, 9, 5, 2, 2, 57, 71, 5, 4, 3, 5, 58,
+	60, 12, 12, 2, 2, 59, 61, 7, 12, 2, 2, 60, 59, 3, 2, 2, 2, 60, 61, 3, 2,
+	2, 2, 61, 62, 3, 2, 2, 2, 62, 63, 7, 25, 2, 2, 63, 71, 5, 16, 9, 2, 64,
+	66, 12, 9, 2, 2, 65, 67, 7, 12, 2, 2, 66, 65, 3, 2, 2, 2, 66, 67, 3, 2,
+	2, 2, 67, 68, 3, 2, 2, 2, 68, 69, 7, 27, 2, 2, 69, 71, 5, 22, 12, 2, 70,
+	46, 3, 2, 2, 2, 70, 49, 3, 2, 2, 2, 70, 52, 3, 2, 2, 2, 70, 55, 3, 2, 2,
+	2, 70, 58, 3, 2, 2, 2, 70, 64, 3, 2, 2, 2, 71, 74, 3, 2, 2, 2, 72, 70,
+	3, 2, 2, 2, 72, 73, 3, 2, 2, 2, 73, 5, 3, 2, 2, 2, 74, 72, 3, 2, 2, 2,
+	75, 81, 5, 14, 8, 2, 76, 81, 5, 18, 10, 2, 77, 81, 5, 16, 9, 2, 78, 81,
+	5, 10, 6, 2, 79, 81, 5, 8, 5, 2, 80, 75, 3, 2, 2, 2, 80, 76, 3, 2, 2, 2,
+	80, 77, 3, 2, 2, 2, 80, 78, 3, 2, 2, 2, 80, 79, 3, 2, 2, 2, 81, 7, 3, 2,
+	2, 2, 82, 83, 9, 6, 2, 2, 83, 9, 3, 2, 2, 2, 84, 85, 7, 35, 2, 2, 85, 11,
+	3, 2, 2, 2, 86, 87, 9, 7, 2, 2, 87, 13, 3, 2, 2, 2, 88, 89, 9, 8, 2, 2,
+	89, 15, 3, 2, 2, 2, 90, 91, 9, 9, 2, 2, 91, 17, 3, 2, 2, 2, 92, 93, 7,
+	32, 2, 2, 93, 19, 3, 2, 2, 2, 94, 103, 7, 4, 2, 2, 95, 100, 5, 4, 3, 2,
+	96, 97, 7, 6, 2, 2, 97, 99, 5, 4, 3, 2, 98, 96, 3, 2, 2, 2, 99, 102, 3,
+	2, 2, 2, 100, 98, 3, 2, 2, 2, 100, 101, 3, 2, 2, 2, 101, 104, 3, 2, 2,
+	2, 102, 100, 3, 2, 2, 2, 103, 95, 3, 2, 2, 2, 103, 104, 3, 2, 2, 2, 104,
+	105, 3, 2, 2, 2, 105, 106, 7, 5, 2, 2, 106, 21, 3, 2, 2, 2, 107, 108, 7,
+	4, 2, 2, 108, 113, 5, 4, 3, 2, 109, 110, 7, 6, 2, 2, 110, 112, 5, 4, 3,
+	2, 111, 109, 3, 2, 2, 2, 112, 115, 3, 2, 2, 2, 113, 111, 3, 2, 2, 2, 113,
+	114, 3, 2, 2, 2, 114, 116, 3, 2, 2, 2, 115, 113, 3, 2, 2, 2, 116, 117,
+	7, 5, 2, 2, 117, 23, 3, 2, 2, 2, 11, 44, 60, 66, 70, 72, 80, 100, 103,
+	113,
+}
+var literalNames = []string{
+	"", "", "'('", "')'", "','", "'''", "'\"'", "'AND'", "'OR'", "'XOR'", "'NOT'",
+	"'*'", "'/'", "'%'", "'+'", "'-'", "'='", "'!='", "'>'", "'>='", "'<'",
+	"'<>'", "'<='", "'LIKE'", "'EXISTS'", "'IN'", "'TRUE'", "'FALSE'",
+}
+var symbolicNames = []string{
+	"", "SPACE", "LR_BRACKET", "RR_BRACKET", "COMMA", "SINGLE_QUOTE_SYMB",
+	"DOUBLE_QUOTE_SYMB", "AND", "OR", "XOR", "NOT", "STAR", "DIVIDE", "MODULE",
+	"PLUS", "MINUS", "EQUAL", "NOT_EQUAL", "GREATER", "GREATER_OR_EQUAL", "LESS",
+	"LESS_GREATER", "LESS_OR_EQUAL", "LIKE", "EXISTS", "IN", "TRUE", "FALSE",
+	"DQUOTED_STRING_LITERAL", "SQUOTED_STRING_LITERAL", "INTEGER_LITERAL",
+	"IDENTIFIER", "IDENTIFIER_WITH_NUMBER", "DATA_IDENTIFIER", "FUNCTION_IDENTIFIER_WITH_UNDERSCORE",
+}
+
+var ruleNames = []string{
+	"cesql", "expression", "atom", "identifier", "dataIdentifier", "functionIdentifier",
+	"booleanLiteral", "stringLiteral", "integerLiteral", "functionParameterList",
+	"setExpression",
+}
+>>>>>>> bcb75b3 (wip: feat: supports data in sql)
 
 type CESQLParserParser struct {
 	*antlr.BaseParser
@@ -167,7 +253,8 @@ const (
 	CESQLParserParserINTEGER_LITERAL                     = 30
 	CESQLParserParserIDENTIFIER                          = 31
 	CESQLParserParserIDENTIFIER_WITH_NUMBER              = 32
-	CESQLParserParserFUNCTION_IDENTIFIER_WITH_UNDERSCORE = 33
+	CESQLParserParserDATA_IDENTIFIER                     = 33
+	CESQLParserParserFUNCTION_IDENTIFIER_WITH_UNDERSCORE = 34
 )
 
 // CESQLParserParser rules.
@@ -176,12 +263,13 @@ const (
 	CESQLParserParserRULE_expression            = 1
 	CESQLParserParserRULE_atom                  = 2
 	CESQLParserParserRULE_identifier            = 3
-	CESQLParserParserRULE_functionIdentifier    = 4
-	CESQLParserParserRULE_booleanLiteral        = 5
-	CESQLParserParserRULE_stringLiteral         = 6
-	CESQLParserParserRULE_integerLiteral        = 7
-	CESQLParserParserRULE_functionParameterList = 8
-	CESQLParserParserRULE_setExpression         = 9
+	CESQLParserParserRULE_dataIdentifier        = 4
+	CESQLParserParserRULE_functionIdentifier    = 5
+	CESQLParserParserRULE_booleanLiteral        = 6
+	CESQLParserParserRULE_stringLiteral         = 7
+	CESQLParserParserRULE_integerLiteral        = 8
+	CESQLParserParserRULE_functionParameterList = 9
+	CESQLParserParserRULE_setExpression         = 10
 )
 
 // ICesqlContext is an interface to support dynamic dispatch.
@@ -285,11 +373,11 @@ func (p *CESQLParserParser) Cesql() (localctx ICesqlContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(20)
+		p.SetState(22)
 		p.expression(0)
 	}
 	{
-		p.SetState(21)
+		p.SetState(23)
 		p.Match(CESQLParserParserEOF)
 	}
 
@@ -346,6 +434,7 @@ func (s *ExpressionContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
+<<<<<<< HEAD
 type InExpressionContext struct {
 	*ExpressionContext
 }
@@ -414,6 +503,8 @@ func (s *InExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{}
 	}
 }
 
+=======
+>>>>>>> bcb75b3 (wip: feat: supports data in sql)
 type BinaryComparisonExpressionContext struct {
 	*ExpressionContext
 }
@@ -505,6 +596,152 @@ func (s *BinaryComparisonExpressionContext) Accept(visitor antlr.ParseTreeVisito
 	switch t := visitor.(type) {
 	case CESQLParserVisitor:
 		return t.VisitBinaryComparisonExpression(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+type FunctionInvocationExpressionContext struct {
+	*ExpressionContext
+}
+
+func NewFunctionInvocationExpressionContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *FunctionInvocationExpressionContext {
+	var p = new(FunctionInvocationExpressionContext)
+
+	p.ExpressionContext = NewEmptyExpressionContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*ExpressionContext))
+
+	return p
+}
+
+func (s *FunctionInvocationExpressionContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *FunctionInvocationExpressionContext) FunctionIdentifier() IFunctionIdentifierContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionIdentifierContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IFunctionIdentifierContext)
+}
+
+func (s *FunctionInvocationExpressionContext) FunctionParameterList() IFunctionParameterListContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionParameterListContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IFunctionParameterListContext)
+}
+
+func (s *FunctionInvocationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CESQLParserVisitor:
+		return t.VisitFunctionInvocationExpression(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+type UnaryLogicExpressionContext struct {
+	*ExpressionContext
+}
+
+func NewUnaryLogicExpressionContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *UnaryLogicExpressionContext {
+	var p = new(UnaryLogicExpressionContext)
+
+	p.ExpressionContext = NewEmptyExpressionContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*ExpressionContext))
+
+	return p
+}
+
+func (s *UnaryLogicExpressionContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *UnaryLogicExpressionContext) NOT() antlr.TerminalNode {
+	return s.GetToken(CESQLParserParserNOT, 0)
+}
+
+func (s *UnaryLogicExpressionContext) Expression() IExpressionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IExpressionContext)
+}
+
+func (s *UnaryLogicExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CESQLParserVisitor:
+		return t.VisitUnaryLogicExpression(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+type InExpressionContext struct {
+	*ExpressionContext
+}
+
+func NewInExpressionContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *InExpressionContext {
+	var p = new(InExpressionContext)
+
+	p.ExpressionContext = NewEmptyExpressionContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*ExpressionContext))
+
+	return p
+}
+
+func (s *InExpressionContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *InExpressionContext) Expression() IExpressionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IExpressionContext)
+}
+
+func (s *InExpressionContext) IN() antlr.TerminalNode {
+	return s.GetToken(CESQLParserParserIN, 0)
+}
+
+func (s *InExpressionContext) SetExpression() ISetExpressionContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISetExpressionContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ISetExpressionContext)
+}
+
+func (s *InExpressionContext) NOT() antlr.TerminalNode {
+	return s.GetToken(CESQLParserParserNOT, 0)
+}
+
+func (s *InExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CESQLParserVisitor:
+		return t.VisitInExpression(s)
 
 	default:
 		return t.VisitChildren(s)
@@ -752,6 +989,7 @@ func (s *LikeExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
+<<<<<<< HEAD
 type FunctionInvocationExpressionContext struct {
 	*ExpressionContext
 }
@@ -812,6 +1050,8 @@ func (s *FunctionInvocationExpressionContext) Accept(visitor antlr.ParseTreeVisi
 	}
 }
 
+=======
+>>>>>>> bcb75b3 (wip: feat: supports data in sql)
 type BinaryMultiplicativeExpressionContext struct {
 	*ExpressionContext
 }
@@ -893,12 +1133,12 @@ func (s *BinaryMultiplicativeExpressionContext) Accept(visitor antlr.ParseTreeVi
 	}
 }
 
-type UnaryLogicExpressionContext struct {
+type DataExistsExpressionContext struct {
 	*ExpressionContext
 }
 
-func NewUnaryLogicExpressionContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *UnaryLogicExpressionContext {
-	var p = new(UnaryLogicExpressionContext)
+func NewDataExistsExpressionContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *DataExistsExpressionContext {
+	var p = new(DataExistsExpressionContext)
 
 	p.ExpressionContext = NewEmptyExpressionContext()
 	p.parser = parser
@@ -907,14 +1147,15 @@ func NewUnaryLogicExpressionContext(parser antlr.Parser, ctx antlr.ParserRuleCon
 	return p
 }
 
-func (s *UnaryLogicExpressionContext) GetRuleContext() antlr.RuleContext {
+func (s *DataExistsExpressionContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *UnaryLogicExpressionContext) NOT() antlr.TerminalNode {
-	return s.GetToken(CESQLParserParserNOT, 0)
+func (s *DataExistsExpressionContext) EXISTS() antlr.TerminalNode {
+	return s.GetToken(CESQLParserParserEXISTS, 0)
 }
 
+<<<<<<< HEAD
 func (s *UnaryLogicExpressionContext) Expression() IExpressionContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
@@ -923,18 +1164,22 @@ func (s *UnaryLogicExpressionContext) Expression() IExpressionContext {
 			break
 		}
 	}
+=======
+func (s *DataExistsExpressionContext) DataIdentifier() IDataIdentifierContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDataIdentifierContext)(nil)).Elem(), 0)
+>>>>>>> bcb75b3 (wip: feat: supports data in sql)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IExpressionContext)
+	return t.(IDataIdentifierContext)
 }
 
-func (s *UnaryLogicExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *DataExistsExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case CESQLParserVisitor:
-		return t.VisitUnaryLogicExpression(s)
+		return t.VisitDataExistsExpression(s)
 
 	default:
 		return t.VisitChildren(s)
@@ -1154,7 +1399,7 @@ func (p *CESQLParserParser) expression(_p int) (localctx IExpressionContext) {
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(38)
+	p.SetState(42)
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 0, p.GetParserRuleContext()) {
 	case 1:
@@ -1163,11 +1408,11 @@ func (p *CESQLParserParser) expression(_p int) (localctx IExpressionContext) {
 		_prevctx = localctx
 
 		{
-			p.SetState(24)
+			p.SetState(26)
 			p.FunctionIdentifier()
 		}
 		{
-			p.SetState(25)
+			p.SetState(27)
 			p.FunctionParameterList()
 		}
 
@@ -1176,12 +1421,12 @@ func (p *CESQLParserParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(27)
+			p.SetState(29)
 			p.Match(CESQLParserParserNOT)
 		}
 		{
-			p.SetState(28)
-			p.expression(11)
+			p.SetState(30)
+			p.expression(12)
 		}
 
 	case 3:
@@ -1189,12 +1434,12 @@ func (p *CESQLParserParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(29)
+			p.SetState(31)
 			p.Match(CESQLParserParserMINUS)
 		}
 		{
-			p.SetState(30)
-			p.expression(10)
+			p.SetState(32)
+			p.expression(11)
 		}
 
 	case 4:
@@ -1202,43 +1447,56 @@ func (p *CESQLParserParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(31)
+			p.SetState(33)
 			p.Match(CESQLParserParserEXISTS)
 		}
 		{
-			p.SetState(32)
+			p.SetState(34)
 			p.Identifier()
 		}
 
 	case 5:
+		localctx = NewDataExistsExpressionContext(p, localctx)
+		p.SetParserRuleContext(localctx)
+		_prevctx = localctx
+		{
+			p.SetState(35)
+			p.Match(CESQLParserParserEXISTS)
+		}
+		{
+			p.SetState(36)
+			p.DataIdentifier()
+		}
+
+	case 6:
 		localctx = NewSubExpressionContext(p, localctx)
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(33)
+			p.SetState(37)
 			p.Match(CESQLParserParserLR_BRACKET)
 		}
 		{
-			p.SetState(34)
+			p.SetState(38)
 			p.expression(0)
 		}
 		{
-			p.SetState(35)
+			p.SetState(39)
 			p.Match(CESQLParserParserRR_BRACKET)
 		}
 
-	case 6:
+	case 7:
 		localctx = NewAtomExpressionContext(p, localctx)
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(37)
+			p.SetState(41)
 			p.Atom()
 		}
 
 	}
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
-	p.SetState(66)
+	p.SetState(70)
 	p.GetErrorHandler().Sync(p)
 	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 4, p.GetParserRuleContext())
 
@@ -1248,22 +1506,22 @@ func (p *CESQLParserParser) expression(_p int) (localctx IExpressionContext) {
 				p.TriggerExitRuleEvent()
 			}
 			_prevctx = localctx
-			p.SetState(64)
+			p.SetState(68)
 			p.GetErrorHandler().Sync(p)
 			switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 3, p.GetParserRuleContext()) {
 			case 1:
 				localctx = NewBinaryMultiplicativeExpressionContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, CESQLParserParserRULE_expression)
-				p.SetState(40)
+				p.SetState(44)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 6)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 6)", ""))
 				}
 				{
-					p.SetState(41)
+					p.SetState(45)
 					_la = p.GetTokenStream().LA(1)
 
-					if !(((_la)&-(0x1f+1)) == 0 && ((int64(1)<<uint(_la))&((int64(1)<<CESQLParserParserSTAR)|(int64(1)<<CESQLParserParserDIVIDE)|(int64(1)<<CESQLParserParserMODULE))) != 0) {
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CESQLParserParserSTAR)|(1<<CESQLParserParserDIVIDE)|(1<<CESQLParserParserMODULE))) != 0) {
 						p.GetErrorHandler().RecoverInline(p)
 					} else {
 						p.GetErrorHandler().ReportMatch(p)
@@ -1271,20 +1529,20 @@ func (p *CESQLParserParser) expression(_p int) (localctx IExpressionContext) {
 					}
 				}
 				{
-					p.SetState(42)
+					p.SetState(46)
 					p.expression(7)
 				}
 
 			case 2:
 				localctx = NewBinaryAdditiveExpressionContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, CESQLParserParserRULE_expression)
-				p.SetState(43)
+				p.SetState(47)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 5)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 5)", ""))
 				}
 				{
-					p.SetState(44)
+					p.SetState(48)
 					_la = p.GetTokenStream().LA(1)
 
 					if !(_la == CESQLParserParserPLUS || _la == CESQLParserParserMINUS) {
@@ -1295,23 +1553,23 @@ func (p *CESQLParserParser) expression(_p int) (localctx IExpressionContext) {
 					}
 				}
 				{
-					p.SetState(45)
+					p.SetState(49)
 					p.expression(6)
 				}
 
 			case 3:
 				localctx = NewBinaryComparisonExpressionContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, CESQLParserParserRULE_expression)
-				p.SetState(46)
+				p.SetState(50)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 4)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 4)", ""))
 				}
 				{
-					p.SetState(47)
+					p.SetState(51)
 					_la = p.GetTokenStream().LA(1)
 
-					if !(((_la)&-(0x1f+1)) == 0 && ((int64(1)<<uint(_la))&((int64(1)<<CESQLParserParserEQUAL)|(int64(1)<<CESQLParserParserNOT_EQUAL)|(int64(1)<<CESQLParserParserGREATER)|(int64(1)<<CESQLParserParserGREATER_OR_EQUAL)|(int64(1)<<CESQLParserParserLESS)|(int64(1)<<CESQLParserParserLESS_GREATER)|(int64(1)<<CESQLParserParserLESS_OR_EQUAL))) != 0) {
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CESQLParserParserEQUAL)|(1<<CESQLParserParserNOT_EQUAL)|(1<<CESQLParserParserGREATER)|(1<<CESQLParserParserGREATER_OR_EQUAL)|(1<<CESQLParserParserLESS)|(1<<CESQLParserParserLESS_GREATER)|(1<<CESQLParserParserLESS_OR_EQUAL))) != 0) {
 						p.GetErrorHandler().RecoverInline(p)
 					} else {
 						p.GetErrorHandler().ReportMatch(p)
@@ -1319,23 +1577,23 @@ func (p *CESQLParserParser) expression(_p int) (localctx IExpressionContext) {
 					}
 				}
 				{
-					p.SetState(48)
+					p.SetState(52)
 					p.expression(5)
 				}
 
 			case 4:
 				localctx = NewBinaryLogicExpressionContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, CESQLParserParserRULE_expression)
-				p.SetState(49)
+				p.SetState(53)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 3)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 3)", ""))
 				}
 				{
-					p.SetState(50)
+					p.SetState(54)
 					_la = p.GetTokenStream().LA(1)
 
-					if !(((_la)&-(0x1f+1)) == 0 && ((int64(1)<<uint(_la))&((int64(1)<<CESQLParserParserAND)|(int64(1)<<CESQLParserParserOR)|(int64(1)<<CESQLParserParserXOR))) != 0) {
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CESQLParserParserAND)|(1<<CESQLParserParserOR)|(1<<CESQLParserParserXOR))) != 0) {
 						p.GetErrorHandler().RecoverInline(p)
 					} else {
 						p.GetErrorHandler().ReportMatch(p)
@@ -1343,70 +1601,70 @@ func (p *CESQLParserParser) expression(_p int) (localctx IExpressionContext) {
 					}
 				}
 				{
-					p.SetState(51)
+					p.SetState(55)
 					p.expression(3)
 				}
 
 			case 5:
 				localctx = NewLikeExpressionContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, CESQLParserParserRULE_expression)
-				p.SetState(52)
+				p.SetState(56)
 
-				if !(p.Precpred(p.GetParserRuleContext(), 9)) {
-					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 9)", ""))
+				if !(p.Precpred(p.GetParserRuleContext(), 10)) {
+					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 10)", ""))
 				}
-				p.SetState(54)
+				p.SetState(58)
 				p.GetErrorHandler().Sync(p)
 				_la = p.GetTokenStream().LA(1)
 
 				if _la == CESQLParserParserNOT {
 					{
-						p.SetState(53)
+						p.SetState(57)
 						p.Match(CESQLParserParserNOT)
 					}
 
 				}
 				{
-					p.SetState(56)
+					p.SetState(60)
 					p.Match(CESQLParserParserLIKE)
 				}
 				{
-					p.SetState(57)
+					p.SetState(61)
 					p.StringLiteral()
 				}
 
 			case 6:
 				localctx = NewInExpressionContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, CESQLParserParserRULE_expression)
-				p.SetState(58)
+				p.SetState(62)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 7)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 7)", ""))
 				}
-				p.SetState(60)
+				p.SetState(64)
 				p.GetErrorHandler().Sync(p)
 				_la = p.GetTokenStream().LA(1)
 
 				if _la == CESQLParserParserNOT {
 					{
-						p.SetState(59)
+						p.SetState(63)
 						p.Match(CESQLParserParserNOT)
 					}
 
 				}
 				{
-					p.SetState(62)
+					p.SetState(66)
 					p.Match(CESQLParserParserIN)
 				}
 				{
-					p.SetState(63)
+					p.SetState(67)
 					p.SetExpression()
 				}
 
 			}
 
 		}
-		p.SetState(68)
+		p.SetState(72)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 4, p.GetParserRuleContext())
 	}
@@ -1640,6 +1898,44 @@ func (s *IntegerAtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 	}
 }
 
+type DataIdentifierAtomContext struct {
+	*AtomContext
+}
+
+func NewDataIdentifierAtomContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *DataIdentifierAtomContext {
+	var p = new(DataIdentifierAtomContext)
+
+	p.AtomContext = NewEmptyAtomContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*AtomContext))
+
+	return p
+}
+
+func (s *DataIdentifierAtomContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *DataIdentifierAtomContext) DataIdentifier() IDataIdentifierContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDataIdentifierContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IDataIdentifierContext)
+}
+
+func (s *DataIdentifierAtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CESQLParserVisitor:
+		return t.VisitDataIdentifierAtom(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *CESQLParserParser) Atom() (localctx IAtomContext) {
 	this := p
 	_ = this
@@ -1663,7 +1959,7 @@ func (p *CESQLParserParser) Atom() (localctx IAtomContext) {
 		}
 	}()
 
-	p.SetState(73)
+	p.SetState(78)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
@@ -1671,7 +1967,7 @@ func (p *CESQLParserParser) Atom() (localctx IAtomContext) {
 		localctx = NewBooleanAtomContext(p, localctx)
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(69)
+			p.SetState(73)
 			p.BooleanLiteral()
 		}
 
@@ -1679,7 +1975,7 @@ func (p *CESQLParserParser) Atom() (localctx IAtomContext) {
 		localctx = NewIntegerAtomContext(p, localctx)
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(70)
+			p.SetState(74)
 			p.IntegerLiteral()
 		}
 
@@ -1687,15 +1983,23 @@ func (p *CESQLParserParser) Atom() (localctx IAtomContext) {
 		localctx = NewStringAtomContext(p, localctx)
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(71)
+			p.SetState(75)
 			p.StringLiteral()
+		}
+
+	case CESQLParserParserDATA_IDENTIFIER:
+		localctx = NewDataIdentifierAtomContext(p, localctx)
+		p.EnterOuterAlt(localctx, 4)
+		{
+			p.SetState(76)
+			p.DataIdentifier()
 		}
 
 	case CESQLParserParserIDENTIFIER, CESQLParserParserIDENTIFIER_WITH_NUMBER:
 		localctx = NewIdentifierAtomContext(p, localctx)
-		p.EnterOuterAlt(localctx, 4)
+		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(72)
+			p.SetState(77)
 			p.Identifier()
 		}
 
@@ -1796,7 +2100,7 @@ func (p *CESQLParserParser) Identifier() (localctx IIdentifierContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(75)
+		p.SetState(80)
 		_la = p.GetTokenStream().LA(1)
 
 		if !(_la == CESQLParserParserIDENTIFIER || _la == CESQLParserParserIDENTIFIER_WITH_NUMBER) {
@@ -1805,6 +2109,98 @@ func (p *CESQLParserParser) Identifier() (localctx IIdentifierContext) {
 			p.GetErrorHandler().ReportMatch(p)
 			p.Consume()
 		}
+	}
+
+	return localctx
+}
+
+// IDataIdentifierContext is an interface to support dynamic dispatch.
+type IDataIdentifierContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsDataIdentifierContext differentiates from other interfaces.
+	IsDataIdentifierContext()
+}
+
+type DataIdentifierContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyDataIdentifierContext() *DataIdentifierContext {
+	var p = new(DataIdentifierContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = CESQLParserParserRULE_dataIdentifier
+	return p
+}
+
+func (*DataIdentifierContext) IsDataIdentifierContext() {}
+
+func NewDataIdentifierContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *DataIdentifierContext {
+	var p = new(DataIdentifierContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = CESQLParserParserRULE_dataIdentifier
+
+	return p
+}
+
+func (s *DataIdentifierContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *DataIdentifierContext) DATA_IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(CESQLParserParserDATA_IDENTIFIER, 0)
+}
+
+func (s *DataIdentifierContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *DataIdentifierContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *DataIdentifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CESQLParserVisitor:
+		return t.VisitDataIdentifier(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *CESQLParserParser) DataIdentifier() (localctx IDataIdentifierContext) {
+	this := p
+	_ = this
+
+	localctx = NewDataIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 8, CESQLParserParserRULE_dataIdentifier)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(82)
+		p.Match(CESQLParserParserDATA_IDENTIFIER)
 	}
 
 	return localctx
@@ -1879,7 +2275,7 @@ func (p *CESQLParserParser) FunctionIdentifier() (localctx IFunctionIdentifierCo
 	_ = this
 
 	localctx = NewFunctionIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 8, CESQLParserParserRULE_functionIdentifier)
+	p.EnterRule(localctx, 10, CESQLParserParserRULE_functionIdentifier)
 	var _la int
 
 	defer func() {
@@ -1900,7 +2296,7 @@ func (p *CESQLParserParser) FunctionIdentifier() (localctx IFunctionIdentifierCo
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(77)
+		p.SetState(84)
 		_la = p.GetTokenStream().LA(1)
 
 		if !(_la == CESQLParserParserIDENTIFIER || _la == CESQLParserParserFUNCTION_IDENTIFIER_WITH_UNDERSCORE) {
@@ -1983,7 +2379,7 @@ func (p *CESQLParserParser) BooleanLiteral() (localctx IBooleanLiteralContext) {
 	_ = this
 
 	localctx = NewBooleanLiteralContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, CESQLParserParserRULE_booleanLiteral)
+	p.EnterRule(localctx, 12, CESQLParserParserRULE_booleanLiteral)
 	var _la int
 
 	defer func() {
@@ -2004,7 +2400,7 @@ func (p *CESQLParserParser) BooleanLiteral() (localctx IBooleanLiteralContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(79)
+		p.SetState(86)
 		_la = p.GetTokenStream().LA(1)
 
 		if !(_la == CESQLParserParserTRUE || _la == CESQLParserParserFALSE) {
@@ -2087,7 +2483,7 @@ func (p *CESQLParserParser) StringLiteral() (localctx IStringLiteralContext) {
 	_ = this
 
 	localctx = NewStringLiteralContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 12, CESQLParserParserRULE_stringLiteral)
+	p.EnterRule(localctx, 14, CESQLParserParserRULE_stringLiteral)
 	var _la int
 
 	defer func() {
@@ -2108,7 +2504,7 @@ func (p *CESQLParserParser) StringLiteral() (localctx IStringLiteralContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(81)
+		p.SetState(88)
 		_la = p.GetTokenStream().LA(1)
 
 		if !(_la == CESQLParserParserDQUOTED_STRING_LITERAL || _la == CESQLParserParserSQUOTED_STRING_LITERAL) {
@@ -2187,7 +2583,7 @@ func (p *CESQLParserParser) IntegerLiteral() (localctx IIntegerLiteralContext) {
 	_ = this
 
 	localctx = NewIntegerLiteralContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, CESQLParserParserRULE_integerLiteral)
+	p.EnterRule(localctx, 16, CESQLParserParserRULE_integerLiteral)
 
 	defer func() {
 		p.ExitRule()
@@ -2207,7 +2603,7 @@ func (p *CESQLParserParser) IntegerLiteral() (localctx IIntegerLiteralContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(83)
+		p.SetState(90)
 		p.Match(CESQLParserParserINTEGER_LITERAL)
 	}
 
@@ -2332,7 +2728,7 @@ func (p *CESQLParserParser) FunctionParameterList() (localctx IFunctionParameter
 	_ = this
 
 	localctx = NewFunctionParameterListContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 16, CESQLParserParserRULE_functionParameterList)
+	p.EnterRule(localctx, 18, CESQLParserParserRULE_functionParameterList)
 	var _la int
 
 	defer func() {
@@ -2353,40 +2749,40 @@ func (p *CESQLParserParser) FunctionParameterList() (localctx IFunctionParameter
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(85)
+		p.SetState(92)
 		p.Match(CESQLParserParserLR_BRACKET)
 	}
-	p.SetState(94)
+	p.SetState(101)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if ((_la-2)&-(0x1f+1)) == 0 && ((int64(1)<<uint((_la-2)))&((int64(1)<<(CESQLParserParserLR_BRACKET-2))|(int64(1)<<(CESQLParserParserNOT-2))|(int64(1)<<(CESQLParserParserMINUS-2))|(int64(1)<<(CESQLParserParserEXISTS-2))|(int64(1)<<(CESQLParserParserTRUE-2))|(int64(1)<<(CESQLParserParserFALSE-2))|(int64(1)<<(CESQLParserParserDQUOTED_STRING_LITERAL-2))|(int64(1)<<(CESQLParserParserSQUOTED_STRING_LITERAL-2))|(int64(1)<<(CESQLParserParserINTEGER_LITERAL-2))|(int64(1)<<(CESQLParserParserIDENTIFIER-2))|(int64(1)<<(CESQLParserParserIDENTIFIER_WITH_NUMBER-2))|(int64(1)<<(CESQLParserParserFUNCTION_IDENTIFIER_WITH_UNDERSCORE-2)))) != 0 {
+	if (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CESQLParserParserLR_BRACKET)|(1<<CESQLParserParserNOT)|(1<<CESQLParserParserMINUS)|(1<<CESQLParserParserEXISTS)|(1<<CESQLParserParserTRUE)|(1<<CESQLParserParserFALSE)|(1<<CESQLParserParserDQUOTED_STRING_LITERAL)|(1<<CESQLParserParserSQUOTED_STRING_LITERAL)|(1<<CESQLParserParserINTEGER_LITERAL)|(1<<CESQLParserParserIDENTIFIER))) != 0) || (((_la-32)&-(0x1f+1)) == 0 && ((1<<uint((_la-32)))&((1<<(CESQLParserParserIDENTIFIER_WITH_NUMBER-32))|(1<<(CESQLParserParserDATA_IDENTIFIER-32))|(1<<(CESQLParserParserFUNCTION_IDENTIFIER_WITH_UNDERSCORE-32)))) != 0) {
 		{
-			p.SetState(86)
+			p.SetState(93)
 			p.expression(0)
 		}
-		p.SetState(91)
+		p.SetState(98)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		for _la == CESQLParserParserCOMMA {
 			{
-				p.SetState(87)
+				p.SetState(94)
 				p.Match(CESQLParserParserCOMMA)
 			}
 			{
-				p.SetState(88)
+				p.SetState(95)
 				p.expression(0)
 			}
 
-			p.SetState(93)
+			p.SetState(100)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 
 	}
 	{
-		p.SetState(96)
+		p.SetState(103)
 		p.Match(CESQLParserParserRR_BRACKET)
 	}
 
@@ -2511,7 +2907,7 @@ func (p *CESQLParserParser) SetExpression() (localctx ISetExpressionContext) {
 	_ = this
 
 	localctx = NewSetExpressionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 18, CESQLParserParserRULE_setExpression)
+	p.EnterRule(localctx, 20, CESQLParserParserRULE_setExpression)
 	var _la int
 
 	defer func() {
@@ -2532,33 +2928,33 @@ func (p *CESQLParserParser) SetExpression() (localctx ISetExpressionContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(98)
+		p.SetState(105)
 		p.Match(CESQLParserParserLR_BRACKET)
 	}
 	{
-		p.SetState(99)
+		p.SetState(106)
 		p.expression(0)
 	}
-	p.SetState(104)
+	p.SetState(111)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == CESQLParserParserCOMMA {
 		{
-			p.SetState(100)
+			p.SetState(107)
 			p.Match(CESQLParserParserCOMMA)
 		}
 		{
-			p.SetState(101)
+			p.SetState(108)
 			p.expression(0)
 		}
 
-		p.SetState(106)
+		p.SetState(113)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(107)
+		p.SetState(114)
 		p.Match(CESQLParserParserRR_BRACKET)
 	}
 
@@ -2597,7 +2993,7 @@ func (p *CESQLParserParser) Expression_Sempred(localctx antlr.RuleContext, predI
 		return p.Precpred(p.GetParserRuleContext(), 3)
 
 	case 4:
-		return p.Precpred(p.GetParserRuleContext(), 9)
+		return p.Precpred(p.GetParserRuleContext(), 10)
 
 	case 5:
 		return p.Precpred(p.GetParserRuleContext(), 7)

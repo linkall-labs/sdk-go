@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 // Code generated from CESQLParser.g4 by ANTLR 4.10.1. DO NOT EDIT.
+=======
+/*
+ Copyright 2021 The CloudEvents Authors
+ SPDX-License-Identifier: Apache-2.0
+*/
+
+// Code generated from CESQLParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
+>>>>>>> bcb75b3 (wip: feat: supports data in sql)
 
 package gen // CESQLParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -11,11 +20,19 @@ func (v *BaseCESQLParserVisitor) VisitCesql(ctx *CesqlContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseCESQLParserVisitor) VisitInExpression(ctx *InExpressionContext) interface{} {
+func (v *BaseCESQLParserVisitor) VisitBinaryComparisonExpression(ctx *BinaryComparisonExpressionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseCESQLParserVisitor) VisitBinaryComparisonExpression(ctx *BinaryComparisonExpressionContext) interface{} {
+func (v *BaseCESQLParserVisitor) VisitFunctionInvocationExpression(ctx *FunctionInvocationExpressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseCESQLParserVisitor) VisitUnaryLogicExpression(ctx *UnaryLogicExpressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseCESQLParserVisitor) VisitInExpression(ctx *InExpressionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -35,15 +52,11 @@ func (v *BaseCESQLParserVisitor) VisitLikeExpression(ctx *LikeExpressionContext)
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseCESQLParserVisitor) VisitFunctionInvocationExpression(ctx *FunctionInvocationExpressionContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseCESQLParserVisitor) VisitBinaryMultiplicativeExpression(ctx *BinaryMultiplicativeExpressionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseCESQLParserVisitor) VisitUnaryLogicExpression(ctx *UnaryLogicExpressionContext) interface{} {
+func (v *BaseCESQLParserVisitor) VisitDataExistsExpression(ctx *DataExistsExpressionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -71,11 +84,19 @@ func (v *BaseCESQLParserVisitor) VisitStringAtom(ctx *StringAtomContext) interfa
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseCESQLParserVisitor) VisitDataIdentifierAtom(ctx *DataIdentifierAtomContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseCESQLParserVisitor) VisitIdentifierAtom(ctx *IdentifierAtomContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
 func (v *BaseCESQLParserVisitor) VisitIdentifier(ctx *IdentifierContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseCESQLParserVisitor) VisitDataIdentifier(ctx *DataIdentifierContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
