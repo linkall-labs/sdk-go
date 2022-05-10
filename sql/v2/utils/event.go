@@ -7,6 +7,7 @@ package utils
 
 import (
 	"fmt"
+	"github.com/tidwall/gjson"
 	"time"
 
 	cloudevents "github.com/cloudevents/sdk-go/v2"
@@ -64,4 +65,26 @@ func ContainsAttribute(event cloudevents.Event, attributeName string) bool {
 
 	_, ok := event.Extensions()[attributeName]
 	return ok
+}
+
+func ContainsDataAttribute(event cloudevents.Event, path string) bool {
+	return gjson.GetBytes(event.Data(), path).Exists()
+}
+
+func GetDataAttribute(event cloudevents.Event, path string) interface{} {
+	result := gjson.GetBytes(event.Data(), path)
+	switch result.Type {
+	case gjson.Null:
+		return nil
+	case gjson.False:
+		return false
+	case gjson.True:
+		return true
+	case gjson.String:
+		return result.Str
+	case gjson.Number:
+		return fmt.Sprintf("%v", result.Num)
+	default:
+		return result.Raw
+	}
 }

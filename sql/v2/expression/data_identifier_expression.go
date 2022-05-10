@@ -18,8 +18,7 @@ type dataIdentifierExpression struct {
 }
 
 func (l dataIdentifierExpression) Evaluate(event cloudevents.Event) (interface{}, error) {
-	// TODO
-	value := utils.GetAttribute(event, l.identifier)
+	value := utils.GetDataAttribute(event, l.identifier)
 	if value == nil {
 		return nil, fmt.Errorf("missing attribute '%s'", l.identifier)
 	}

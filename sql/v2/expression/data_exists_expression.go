@@ -16,8 +16,7 @@ type dataExistsExpression struct {
 }
 
 func (l dataExistsExpression) Evaluate(event cloudevents.Event) (interface{}, error) {
-	// TODO
-	return utils.ContainsAttribute(event, l.identifier), nil
+	return utils.ContainsDataAttribute(event, l.identifier), nil
 }
 
 func NewDataExistsExpression(identifier string) cesql.Expression {

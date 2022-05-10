@@ -5,7 +5,12 @@ go 1.17
 require (
 	github.com/antlr/antlr4/runtime/Go/antlr v1.4.10
 	github.com/cloudevents/sdk-go/v2 v2.5.0
+<<<<<<< HEAD
 	github.com/stretchr/testify v1.8.0
+=======
+	github.com/stretchr/testify v1.5.1
+	github.com/tidwall/gjson v1.14.1
+>>>>>>> 7608359 (feat: support data sql impl)
 	sigs.k8s.io/yaml v1.2.0
 )
 
