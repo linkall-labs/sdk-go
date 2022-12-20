@@ -20,14 +20,14 @@ This library will help you to:
 _Note:_ Supported
 [CloudEvents specification](https://github.com/cloudevents/spec): 0.3, 1.0
 
-_Note:_ Supported go version: 1.14+
+_Note:_ Supported go version: 1.17+
 
 ## Get started
 
 Add the module as dependency using go mod:
 
 ```shell
-go get github.com/cloudevents/sdk-go/v2@v2.6.0
+go get github.com/cloudevents/sdk-go/v2@v2.12.0
 ```
 
 And import the module in your code
@@ -83,6 +83,19 @@ func main() {
 }
 ```
 
+## Create a CloudEvent from an HTTP Request
+
+```go
+func handler(w http.ResponseWriter, r *http.Request) {
+	event, err := cloudevents.NewCloudEventFromHTTPRequest(r)
+	if err != nil {
+		log.Print("failed to parse CloudEvent from request: %v", err)
+		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
+	}
+	w.Write([]byte(*event.String()))
+}
+```
+
 ## Serialize/Deserialize a CloudEvent
 
 To marshal a CloudEvent into JSON:
@@ -124,7 +137,6 @@ err := json.Unmarshal(bytes, &event)
 - Slack: #cloudeventssdk channel under
   [CNCF's Slack workspace](https://slack.cncf.io/).
 - Email: https://lists.cncf.io/g/cncf-cloudevents-sdk
-- Contact for additional information: Scott Nichols (`@Scott Nichols` on slack).
 
 Each SDK may have its own unique processes, tooling and guidelines, common
 governance related material can be found in the
