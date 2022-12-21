@@ -1,13 +1,4 @@
-<<<<<<< HEAD
 // Code generated from CESQLParser.g4 by ANTLR 4.10.1. DO NOT EDIT.
-=======
-/*
- Copyright 2021 The CloudEvents Authors
- SPDX-License-Identifier: Apache-2.0
-*/
-
-// Code generated from CESQLParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
->>>>>>> bcb75b3 (wip: feat: supports data in sql)
 
 package gen // CESQLParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"

@@ -5,12 +5,8 @@ go 1.17
 require (
 	github.com/antlr/antlr4/runtime/Go/antlr v1.4.10
 	github.com/cloudevents/sdk-go/v2 v2.5.0
-<<<<<<< HEAD
 	github.com/stretchr/testify v1.8.0
-=======
-	github.com/stretchr/testify v1.5.1
 	github.com/tidwall/gjson v1.14.1
->>>>>>> 7608359 (feat: support data sql impl)
 	sigs.k8s.io/yaml v1.2.0
 )
 
@@ -22,6 +18,8 @@ require (
 	github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421 // indirect
 	github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/tidwall/match v1.1.1 // indirect
+	github.com/tidwall/pretty v1.2.0 // indirect
 	go.uber.org/atomic v1.4.0 // indirect
 	go.uber.org/multierr v1.1.0 // indirect
 	go.uber.org/zap v1.10.0 // indirect
