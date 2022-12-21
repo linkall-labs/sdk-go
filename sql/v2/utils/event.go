@@ -7,12 +7,12 @@ package utils
 
 import (
 	"fmt"
-	"github.com/tidwall/gjson"
 	"time"
 
 	cloudevents "github.com/cloudevents/sdk-go/v2"
 	"github.com/cloudevents/sdk-go/v2/binding/spec"
 	"github.com/cloudevents/sdk-go/v2/types"
+	"github.com/tidwall/gjson"
 )
 
 func GetAttribute(event cloudevents.Event, attributeName string) interface{} {
