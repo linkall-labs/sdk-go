@@ -76,8 +76,8 @@ func TestProtobufFormatWithProtobufCodec(t *testing.T) {
 	// Using the CloudEventAttributeValue because it is convenient and is an
 	// independent protobuf message. Any protobuf message would work but this
 	// one is already generated and included in the source.
-	payload := &pb.CloudEventAttributeValue{
-		Attr: &pb.CloudEventAttributeValue_CeBoolean{
+	payload := &pb.CloudEvent_CloudEventAttributeValue{
+		Attr: &pb.CloudEvent_CloudEventAttributeValue_CeBoolean{
 			CeBoolean: true,
 		},
 	}
@@ -89,7 +89,7 @@ func TestProtobufFormatWithProtobufCodec(t *testing.T) {
 	require.NoError(format.Protobuf.Unmarshal(b, &e2))
 	require.Equal(e, e2)
 
-	payload2 := &pb.CloudEventAttributeValue{}
+	payload2 := &pb.CloudEvent_CloudEventAttributeValue{}
 	require.NoError(e2.DataAs(payload2))
 	require.True(payload2.GetCeBoolean())
 }
@@ -107,12 +107,12 @@ func TestFromProto(t *testing.T) {
 			Id:          "abc-123",
 			Source:      "/source",
 			Type:        "some.type",
-			Attributes: map[string]*pb.CloudEventAttributeValue{
-				"datacontenttype": {Attr: &pb.CloudEventAttributeValue_CeString{CeString: "application/json"}},
-				"extra1":          {Attr: &pb.CloudEventAttributeValue_CeString{CeString: "extra1 value"}},
-				"extra2":          {Attr: &pb.CloudEventAttributeValue_CeInteger{CeInteger: 2}},
-				"extra3":          {Attr: &pb.CloudEventAttributeValue_CeBoolean{CeBoolean: true}},
-				"extra4":          {Attr: &pb.CloudEventAttributeValue_CeUri{CeUri: "https://example.com"}},
+			Attributes: map[string]*pb.CloudEvent_CloudEventAttributeValue{
+				"datacontenttype": {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeString{CeString: "application/json"}},
+				"extra1":          {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeString{CeString: "extra1 value"}},
+				"extra2":          {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeInteger{CeInteger: 2}},
+				"extra3":          {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeBoolean{CeBoolean: true}},
+				"extra4":          {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeUri{CeUri: "https://example.com"}},
 			},
 			Data: &pb.CloudEvent_BinaryData{
 				BinaryData: []byte(`{"unit":"test"}`),
@@ -138,12 +138,12 @@ func TestFromProto(t *testing.T) {
 			Id:          "abc-123",
 			Source:      "/source",
 			Type:        "some.type",
-			Attributes: map[string]*pb.CloudEventAttributeValue{
-				"datacontenttype": {Attr: &pb.CloudEventAttributeValue_CeString{CeString: "text/plain"}},
-				"extra1":          {Attr: &pb.CloudEventAttributeValue_CeString{CeString: "extra1 value"}},
-				"extra2":          {Attr: &pb.CloudEventAttributeValue_CeInteger{CeInteger: 2}},
-				"extra3":          {Attr: &pb.CloudEventAttributeValue_CeBoolean{CeBoolean: true}},
-				"extra4":          {Attr: &pb.CloudEventAttributeValue_CeUri{CeUri: "https://example.com"}},
+			Attributes: map[string]*pb.CloudEvent_CloudEventAttributeValue{
+				"datacontenttype": {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeString{CeString: "text/plain"}},
+				"extra1":          {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeString{CeString: "extra1 value"}},
+				"extra2":          {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeInteger{CeInteger: 2}},
+				"extra3":          {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeBoolean{CeBoolean: true}},
+				"extra4":          {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeUri{CeUri: "https://example.com"}},
 			},
 			Data: &pb.CloudEvent_TextData{
 				TextData: `this is some text with a "quote"`,
@@ -169,12 +169,12 @@ func TestFromProto(t *testing.T) {
 			Id:          "abc-123",
 			Source:      "/source",
 			Type:        "some.type",
-			Attributes: map[string]*pb.CloudEventAttributeValue{
-				"datacontenttype": {Attr: &pb.CloudEventAttributeValue_CeString{CeString: "application/json"}},
-				"extra1":          {Attr: &pb.CloudEventAttributeValue_CeString{CeString: "extra1 value"}},
-				"extra2":          {Attr: &pb.CloudEventAttributeValue_CeInteger{CeInteger: 2}},
-				"extra3":          {Attr: &pb.CloudEventAttributeValue_CeBoolean{CeBoolean: true}},
-				"extra4":          {Attr: &pb.CloudEventAttributeValue_CeUri{CeUri: "https://example.com"}},
+			Attributes: map[string]*pb.CloudEvent_CloudEventAttributeValue{
+				"datacontenttype": {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeString{CeString: "application/json"}},
+				"extra1":          {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeString{CeString: "extra1 value"}},
+				"extra2":          {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeInteger{CeInteger: 2}},
+				"extra3":          {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeBoolean{CeBoolean: true}},
+				"extra4":          {Attr: &pb.CloudEvent_CloudEventAttributeValue_CeUri{CeUri: "https://example.com"}},
 			},
 			Data: &pb.CloudEvent_TextData{
 				TextData: `{"unit":"test"}`,
