@@ -75,14 +75,14 @@ func (protobufFmt) Unmarshal(b []byte, e *event.Event) error {
 	return nil
 }
 
-// convert an SDK event to a protobuf variant of the event that can be marshaled.
+// ToProto convert an SDK event to a protobuf variant of the event that can be marshaled.
 func ToProto(e *event.Event) (*pb.CloudEvent, error) {
 	container := &pb.CloudEvent{
 		Id:          e.ID(),
 		Source:      e.Source(),
 		SpecVersion: e.SpecVersion(),
 		Type:        e.Type(),
-		Attributes:  make(map[string]*pb.CloudEventAttributeValue),
+		Attributes:  make(map[string]*pb.CloudEvent_CloudEventAttributeValue),
 	}
 	if e.DataContentType() != "" {
 		container.Attributes[datacontenttype], _ = attributeFor(e.DataContentType())
@@ -118,39 +118,39 @@ func ToProto(e *event.Event) (*pb.CloudEvent, error) {
 	return container, nil
 }
 
-func attributeFor(v interface{}) (*pb.CloudEventAttributeValue, error) {
+func attributeFor(v interface{}) (*pb.CloudEvent_CloudEventAttributeValue, error) {
 	vv, err := types.Validate(v)
 	if err != nil {
 		return nil, err
 	}
-	attr := &pb.CloudEventAttributeValue{}
+	attr := &pb.CloudEvent_CloudEventAttributeValue{}
 	switch vt := vv.(type) {
 	case bool:
-		attr.Attr = &pb.CloudEventAttributeValue_CeBoolean{
+		attr.Attr = &pb.CloudEvent_CloudEventAttributeValue_CeBoolean{
 			CeBoolean: vt,
 		}
 	case int32:
-		attr.Attr = &pb.CloudEventAttributeValue_CeInteger{
+		attr.Attr = &pb.CloudEvent_CloudEventAttributeValue_CeInteger{
 			CeInteger: vt,
 		}
 	case string:
-		attr.Attr = &pb.CloudEventAttributeValue_CeString{
+		attr.Attr = &pb.CloudEvent_CloudEventAttributeValue_CeString{
 			CeString: vt,
 		}
 	case []byte:
-		attr.Attr = &pb.CloudEventAttributeValue_CeBytes{
+		attr.Attr = &pb.CloudEvent_CloudEventAttributeValue_CeBytes{
 			CeBytes: vt,
 		}
 	case types.URI:
-		attr.Attr = &pb.CloudEventAttributeValue_CeUri{
+		attr.Attr = &pb.CloudEvent_CloudEventAttributeValue_CeUri{
 			CeUri: vt.String(),
 		}
 	case types.URIRef:
-		attr.Attr = &pb.CloudEventAttributeValue_CeUriRef{
+		attr.Attr = &pb.CloudEvent_CloudEventAttributeValue_CeUriRef{
 			CeUriRef: vt.String(),
 		}
 	case types.Timestamp:
-		attr.Attr = &pb.CloudEventAttributeValue_CeTimestamp{
+		attr.Attr = &pb.CloudEvent_CloudEventAttributeValue_CeTimestamp{
 			CeTimestamp: timestamppb.New(vt.Time),
 		}
 	default:
@@ -159,30 +159,30 @@ func attributeFor(v interface{}) (*pb.CloudEventAttributeValue, error) {
 	return attr, nil
 }
 
-func valueFrom(attr *pb.CloudEventAttributeValue) (interface{}, error) {
+func valueFrom(attr *pb.CloudEvent_CloudEventAttributeValue) (interface{}, error) {
 	var v interface{}
 	switch vt := attr.Attr.(type) {
-	case *pb.CloudEventAttributeValue_CeBoolean:
+	case *pb.CloudEvent_CloudEventAttributeValue_CeBoolean:
 		v = vt.CeBoolean
-	case *pb.CloudEventAttributeValue_CeInteger:
+	case *pb.CloudEvent_CloudEventAttributeValue_CeInteger:
 		v = vt.CeInteger
-	case *pb.CloudEventAttributeValue_CeString:
+	case *pb.CloudEvent_CloudEventAttributeValue_CeString:
 		v = vt.CeString
-	case *pb.CloudEventAttributeValue_CeBytes:
+	case *pb.CloudEvent_CloudEventAttributeValue_CeBytes:
 		v = vt.CeBytes
-	case *pb.CloudEventAttributeValue_CeUri:
+	case *pb.CloudEvent_CloudEventAttributeValue_CeUri:
 		uri, err := url.Parse(vt.CeUri)
 		if err != nil {
 			return nil, fmt.Errorf("failed to parse URI value %s: %s", vt.CeUri, err.Error())
 		}
 		v = uri
-	case *pb.CloudEventAttributeValue_CeUriRef:
+	case *pb.CloudEvent_CloudEventAttributeValue_CeUriRef:
 		uri, err := url.Parse(vt.CeUriRef)
 		if err != nil {
 			return nil, fmt.Errorf("failed to parse URIRef value %s: %s", vt.CeUriRef, err.Error())
 		}
 		v = types.URIRef{URL: *uri}
-	case *pb.CloudEventAttributeValue_CeTimestamp:
+	case *pb.CloudEvent_CloudEventAttributeValue_CeTimestamp:
 		v = vt.CeTimestamp.AsTime()
 	default:
 		return nil, fmt.Errorf("unsupported attribute type: %T", vt)
@@ -190,7 +190,7 @@ func valueFrom(attr *pb.CloudEventAttributeValue) (interface{}, error) {
 	return types.Validate(v)
 }
 
-// Convert from a protobuf variant into the generic, SDK event.
+// FromProto convert from a protobuf variant into the generic, SDK event.
 func FromProto(container *pb.CloudEvent) (*event.Event, error) {
 	e := event.New()
 	e.SetID(container.Id)
@@ -205,7 +205,7 @@ func FromProto(container *pb.CloudEvent) (*event.Event, error) {
 	// that receiving an envelope in application/cloudevents+protobuf know that
 	// the implied data content type if missing is application/protobuf.
 	//
-	// It is also not clear what should happen if the data content type is unset
+	// It is also not clear what should happen if the data content type is unset,
 	// but it is known that the data content type is _not_ the same as the
 	// envelope. For example, a JSON encoded data value would be stored within
 	// the BinaryData attribute of the protobuf formatted envelope. Protobuf
@@ -219,7 +219,7 @@ func FromProto(container *pb.CloudEvent) (*event.Event, error) {
 	if container.Attributes != nil {
 		attr := container.Attributes[datacontenttype]
 		if attr != nil {
-			if stattr, ok := attr.Attr.(*pb.CloudEventAttributeValue_CeString); ok {
+			if stattr, ok := attr.Attr.(*pb.CloudEvent_CloudEventAttributeValue_CeString); ok {
 				contentType = stattr.CeString
 			}
 		}
